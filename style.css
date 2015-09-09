@@ -1,0 +1,16 @@
+/*any h1 tag will have these properties*/
+/*there are properties that change visuals, and those that change the positioning*/
+
+
+
+body{
+  /*relative to parent element, not the page*/
+  width:100%;
+}
+h1 {
+  color: blue;
+  /*move it to the right side of the page*/
+  float: right;
+  /*won't go passed this boundary*/
+  width: 900px;
+}
