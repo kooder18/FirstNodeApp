@@ -1,6 +1,3 @@
-/*any h1 tag will have these properties*/
-/*there are properties that change visuals, and those that change the positioning*/
-
 /*------------------------------------
 
             GENERAL STYLES
@@ -8,7 +5,6 @@
 -------------------------------------*/
 
 body{
-  /*relative to parent element, not the page*/
   width:100%;
 }
 
@@ -38,3 +34,54 @@ h1 {
             SEARCH STYLES
             Jackson
 -------------------------------------*/
+/*form {
+                width:500px;
+                margin:50px auto;
+}
+.search {
+                padding:8px 15px;
+                background:rgba(50, 50, 50, 0.2);
+                border:0px solid #dbdbdb;
+}
+.button {
+                position:relative;
+                padding:6px 15px;
+                left:-8px;
+                border:2px solid #207cca;
+                background-color:#207cca;
+                color:#fafafa;
+}
+.button:hover  {
+                background-color:#fafafa;
+                color:#207cca;
+}*/
+#container{
+  width: 400px;
+  height: 300px;
+  /*overflow: hidden;*/
+  border: 3px double #000;
+  /*white-space: nowrap;*/
+}
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    color: initial;
+}
+div {
+    text-align: justify;
+}
+
+div img {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+}
+
+div:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+}
