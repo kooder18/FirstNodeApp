@@ -1,0 +1,40 @@
+/*any h1 tag will have these properties*/
+/*there are properties that change visuals, and those that change the positioning*/
+
+/*------------------------------------
+
+            GENERAL STYLES
+
+-------------------------------------*/
+
+body{
+  /*relative to parent element, not the page*/
+  width:100%;
+}
+
+h1 {
+}
+
+
+/*------------------------------------
+            HOMEPAGE STYLES
+            Kris
+-------------------------------------*/
+
+
+/*------------------------------------
+            DASHBOARD STYLES
+            Melody
+-------------------------------------*/
+
+
+/*------------------------------------
+            PROFILE STYLES
+            Derek
+-------------------------------------*/
+
+
+/*------------------------------------
+            SEARCH STYLES
+            Jackson
+-------------------------------------*/
