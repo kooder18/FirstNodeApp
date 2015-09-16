@@ -55,7 +55,14 @@ h1 {
                 background-color:#fafafa;
                 color:#207cca;
 }*/
-#container{
+#imagecontainer{
+  width: 400px;
+  height: 300px;
+  /*overflow: hidden;*/
+  border: 3px double #000;
+  /*white-space: nowrap;*/
+}
+#savescontainer{
   width: 400px;
   height: 300px;
   /*overflow: hidden;*/
