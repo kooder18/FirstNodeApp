@@ -177,6 +177,11 @@ nav {
       margin: 0;
     }
 
+.welcome-msg {
+  float:right;
+  line-height: normal;
+  padding-top:5px;
+}
 /*------------------------------------*\
                 ¡FOOTER
 \*------------------------------------*/
