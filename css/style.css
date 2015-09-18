@@ -31,7 +31,15 @@ nav ul li{
             HOMEPAGE STYLES
             Kris
 -------------------------------------*/
+h1{
+	text-align: center;
+	margin: auto
+}
 
+p{
+	text-align: center;
+	margin: auto;
+}
 
 /*------------------------------------
             DASHBOARD STYLES
