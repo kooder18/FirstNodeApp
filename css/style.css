@@ -68,8 +68,11 @@
   padding:10px;
   margin:5px;
   text-align: center;
-  width: 75px;
-  font-size:.75em;
+  font-size:1.25em;
+}
+
+.btn:hover{
+  background-color:#8fd4da;
 }
 
 .group-btn{
@@ -159,18 +162,17 @@ header {
   header h1 {
     line-height: 100px;
   }
+
+  .logo-wrap{
+    text-align: center;
+    padding:15px;
+  }
   a.header-logo{
-    margin: 10px auto 1px auto;
-    display:block;
-    height:auto;
-    text-align:center;
+
 
   }
 
   a.header-logo img{
-    width:50%;
-    margin: 10px auto 20px auto;
-    text-align:center;
   }
 /*------------------------------------*\
                 ¡NAV
@@ -193,25 +195,29 @@ nav {
     position:absolute;
     top:50px;
     right:100px;
-    width:505px;
+    width:16em;
+    z-index: 10;
   }
   nav a {
     color: #c39a4e;
     display: inline-block;
     float: right;
-    margin: 0 5px 0 0;
+    margin: -10px 5px 0 0;
     padding: 5px 10px;
     text-decoration: none;
     text-transform:uppercase;
     font-weight:bold;
+    font-size:2em;
+
   }
     nav a:hover, nav a:active {
-      color: #494949;
-    }
-    nav a:last-child {
-      margin: 0;
+      color: #8fd4da;
     }
 
+
+nav a.nav-current{
+  color: #e84724;
+}
 .welcome-msg {
   color:#8fd4da;
   float:right;
