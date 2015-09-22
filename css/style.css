@@ -238,62 +238,18 @@ p{
             SEARCH STYLES
             Jackson
 -------------------------------------*/
-/*form {
-                width:500px;
-                margin:50px auto;
+/*hashtag a {
+  border: solid 1px;
+  color: #494949;
+  display: inline-block;
+  float: left;
+  margin: 0 5px 0 0;
+  padding: 5px 10px;
+  text-decoration: none;
 }
-.search {
-                padding:8px 15px;
-                background:rgba(50, 50, 50, 0.2);
-                border:0px solid #dbdbdb;
-}
-.button {
-                position:relative;
-                padding:6px 15px;
-                left:-8px;
-                border:2px solid #207cca;
-                background-color:#207cca;
-                color:#fafafa;
-}
-.button:hover  {
-                background-color:#fafafa;
-                color:#207cca;
-}*/
-/*imagecontainer{
-  width: 400px;
-  height: 300px;
-  /*overflow: hidden;*/
-  /*border: 3px double #000;
-  /*white-space: nowrap;*/
-}
-/*
-#savescontainer{
-  width: 400px;
-  height: 300px;
-  /*overflow: hidden;*/
-  border: 3px double #000;
-  /*white-space: nowrap;*/
-}
-/*a.button {
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    appearance: button;
-
-    text-decoration: none;
-    color: initial;
-}
-div {
-    text-align: justify;
-}
-
-div img {
-    display: inline-block;
-    width: 100px;
-    height: 100px;
-}
-
-div:after {
-    content: '';
-    display: inline-block;
-    width: 100%;
-}
+  hashtag a:hover, hashtag a:active {
+    color: #494949;
+  }
+  hashtag a:last-child {
+    margin: 0;
+  }*/
