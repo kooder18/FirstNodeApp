@@ -61,12 +61,23 @@
               ¡BUTTONS
 \*------------------------------------*/
 .btn {
-  background: #FFF;
-  border: solid 1px #CCC;
-  height: 25px;
+  border-radius:7px;
+  background-color:  #e84724;
+  color:#fff;
+  border: none;
+  padding:10px;
+  margin:5px;
   text-align: center;
   width: 75px;
+  font-size:.75em;
 }
+
+.group-btn{
+  position:absolute;
+  bottom:25px;
+  right:25px;
+}
+
 
 /*------------------------------------*\
               ¡TYPOGRAPHY
@@ -92,7 +103,7 @@ html {
 }
 
 body {
-  background: #FFF;
+  background: #fdfbef;
   color: #494949;
   font-family: sans-serif;
   height: 100%;
@@ -116,9 +127,9 @@ body {
 
 .box {
   width: 32%;
-  border: solid 1px #CCC;
   float: left;
   padding: 5px;
+  position: relative;
 }
   .box:nth-child(n) {
     margin-bottom: 2%;
@@ -129,23 +140,38 @@ body {
     margin-bottom: 0;
   }
   .box img {
+    border-radius: 25px;
     display: block;
     margin: 0 0 10px;
     width: 100%;
   }
 
+
 /*------------------------------------*\
                 ¡HEADER
 \*------------------------------------*/
 header {
-  border-bottom: solid 1px #CCC;
-  height: 100px;
-  margin: 0 0 10px;
+  background-color: #fff;
+  border-bottom: solid 3px #f8f1c8;
+  height: 120px;
+  margin: -15px 0 10px;
 }
   header h1 {
     line-height: 100px;
   }
+  a.header-logo{
+    margin: 10px auto 1px auto;
+    display:block;
+    height:auto;
+    text-align:center;
 
+  }
+
+  a.header-logo img{
+    width:50%;
+    margin: 10px auto 20px auto;
+    text-align:center;
+  }
 /*------------------------------------*\
                 ¡NAV
 \*------------------------------------*/
@@ -160,15 +186,24 @@ nav {
   -webkit-justify-content: space-between;
   -moz-justify-content: space-between;
   justify-content: space-between;*/
+
 }
+
+  .nav-wrap{
+    position:absolute;
+    top:50px;
+    right:100px;
+    width:505px;
+  }
   nav a {
-    border: solid 1px;
-    color: #CCC;
+    color: #c39a4e;
     display: inline-block;
-    float: left;
+    float: right;
     margin: 0 5px 0 0;
     padding: 5px 10px;
     text-decoration: none;
+    text-transform:uppercase;
+    font-weight:bold;
   }
     nav a:hover, nav a:active {
       color: #494949;
@@ -178,6 +213,7 @@ nav {
     }
 
 .welcome-msg {
+  color:#8fd4da;
   float:right;
   line-height: normal;
   padding-top:5px;
@@ -213,6 +249,10 @@ p{
             DASHBOARD STYLES
             Melody
 -------------------------------------*/
+
+
+
+
 /*.dashboard_display{
   width:325px;
   height:200px;
