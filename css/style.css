@@ -68,6 +68,7 @@
   padding:10px;
   margin:5px;
   text-align: center;
+  text-decoration: none;
   font-size:1.25em;
 }
 
@@ -284,18 +285,12 @@ p{
             SEARCH STYLES
             Jackson
 -------------------------------------*/
-/*hashtag a {
-  border: solid 1px;
-  color: #494949;
-  display: inline-block;
-  float: left;
-  margin: 0 5px 0 0;
-  padding: 5px 10px;
-  text-decoration: none;
+.search-bar{
+  border-radius:7px;
+  color:#e84724;
+  border-color: #494949;
+  padding:10px;
+  margin:5px;
+  text-align: center;
+  font-size:1.25em;
 }
-  hashtag a:hover, hashtag a:active {
-    color: #494949;
-  }
-  hashtag a:last-child {
-    margin: 0;
-  }*/

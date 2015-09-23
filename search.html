@@ -2,32 +2,41 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>Gramtracker - Track your favorite grams and find them later!</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	<link href="css/style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
 <body>
 	<div class="gt-wrap">
 		<header>
-			<div class="gt-squeeze">
-				<h1>Header</h1>
+      <div class="nav-wrap">
+        <div class="welcome-msg ">
+          [Username]
+        </div>
+          <nav>
+            <a href="profile.html"><i class="fa fa-user"></i></a>
+            <a  href="dashboard.html"><i class="fa fa-dashboard"></i></a>
+            <a href="search.html"><i class="fa fa-search"></i></a>
+          </nav>
+
+      </div>
+    	<div class="gt-squeeze">
+        <div class="logo-wrap">
+  				<a class="header-logo" href="index.html">
+            <img src="img/logo.png" alt="Gramtracker Logo" />
+          </a>
+            </div>
+
+
 			</div>
+
 		</header>
-		<div class="nav-wrap">
-			<div class="gt-squeeze">
-				<nav>
-					<a href="index.html">Home</a>
-					<a href="dashboard.html">Dashboard</a>
-					<a href="profile.html">Profile</a>
-					<a href="search.html">Search</a>
-				</nav>
-			</div>
-		</div>
 		<div class="gt-content">
 			<div class="gt-squeeze">
 				<form>
-				  <input type="text" placeholder="Search..." required>
-					<a href="searchResult.html" class="btn">search</a>              
+				  <input type="text" placeholder="Search..." class="search-bar" required>
+					<a href="searchResult.html" class="btn">search</a>
 				</form>
 			</div>
 		</div>
