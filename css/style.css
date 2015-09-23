@@ -61,12 +61,26 @@
               ¡BUTTONS
 \*------------------------------------*/
 .btn {
-  background: #FFF;
-  border: solid 1px #CCC;
-  height: 25px;
+  border-radius:7px;
+  background-color:  #e84724;
+  color:#fff;
+  border: none;
+  padding:10px;
+  margin:5px;
   text-align: center;
-  width: 75px;
+  font-size:1.25em;
 }
+
+.btn:hover{
+  background-color:#8fd4da;
+}
+
+.group-btn{
+  position:absolute;
+  bottom:25px;
+  right:25px;
+}
+
 
 /*------------------------------------*\
               ¡TYPOGRAPHY
@@ -92,7 +106,7 @@ html {
 }
 
 body {
-  background: #FFF;
+  background: #fdfbef;
   color: #494949;
   font-family: sans-serif;
   height: 100%;
@@ -116,9 +130,9 @@ body {
 
 .box {
   width: 32%;
-  border: solid 1px #CCC;
   float: left;
   padding: 5px;
+  position: relative;
 }
   .box:nth-child(n) {
     margin-bottom: 2%;
@@ -129,23 +143,37 @@ body {
     margin-bottom: 0;
   }
   .box img {
+    border-radius: 25px;
     display: block;
     margin: 0 0 10px;
     width: 100%;
   }
 
+
 /*------------------------------------*\
                 ¡HEADER
 \*------------------------------------*/
 header {
-  border-bottom: solid 1px #CCC;
-  height: 100px;
-  margin: 0 0 10px;
+  background-color: #fff;
+  border-bottom: solid 3px #f8f1c8;
+  height: 120px;
+  margin: -15px 0 10px;
 }
   header h1 {
     line-height: 100px;
   }
 
+  .logo-wrap{
+    text-align: center;
+    padding:15px;
+  }
+  a.header-logo{
+
+
+  }
+
+  a.header-logo img{
+  }
 /*------------------------------------*\
                 ¡NAV
 \*------------------------------------*/
@@ -160,24 +188,38 @@ nav {
   -webkit-justify-content: space-between;
   -moz-justify-content: space-between;
   justify-content: space-between;*/
+
 }
+
+  .nav-wrap{
+    position:absolute;
+    top:50px;
+    right:100px;
+    width:16em;
+    z-index: 10;
+  }
   nav a {
-    border: solid 1px;
-    color: #CCC;
+    color: #c39a4e;
     display: inline-block;
-    float: left;
-    margin: 0 5px 0 0;
+    float: right;
+    margin: -10px 5px 0 0;
     padding: 5px 10px;
     text-decoration: none;
+    text-transform:uppercase;
+    font-weight:bold;
+    font-size:2em;
+
   }
     nav a:hover, nav a:active {
-      color: #494949;
-    }
-    nav a:last-child {
-      margin: 0;
+      color: #8fd4da;
     }
 
+
+nav a.nav-current{
+  color: #e84724;
+}
 .welcome-msg {
+  color:#8fd4da;
   float:right;
   line-height: normal;
   padding-top:5px;
@@ -213,6 +255,10 @@ p{
             DASHBOARD STYLES
             Melody
 -------------------------------------*/
+
+
+
+
 /*.dashboard_display{
   width:325px;
   height:200px;
@@ -238,62 +284,18 @@ p{
             SEARCH STYLES
             Jackson
 -------------------------------------*/
-/*form {
-                width:500px;
-                margin:50px auto;
+/*hashtag a {
+  border: solid 1px;
+  color: #494949;
+  display: inline-block;
+  float: left;
+  margin: 0 5px 0 0;
+  padding: 5px 10px;
+  text-decoration: none;
 }
-.search {
-                padding:8px 15px;
-                background:rgba(50, 50, 50, 0.2);
-                border:0px solid #dbdbdb;
-}
-.button {
-                position:relative;
-                padding:6px 15px;
-                left:-8px;
-                border:2px solid #207cca;
-                background-color:#207cca;
-                color:#fafafa;
-}
-.button:hover  {
-                background-color:#fafafa;
-                color:#207cca;
-}*/
-/*imagecontainer{
-  width: 400px;
-  height: 300px;
-  /*overflow: hidden;*/
-  /*border: 3px double #000;
-  /*white-space: nowrap;*/
-}
-/*
-#savescontainer{
-  width: 400px;
-  height: 300px;
-  /*overflow: hidden;*/
-  border: 3px double #000;
-  /*white-space: nowrap;*/
-}
-/*a.button {
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    appearance: button;
-
-    text-decoration: none;
-    color: initial;
-}
-div {
-    text-align: justify;
-}
-
-div img {
-    display: inline-block;
-    width: 100px;
-    height: 100px;
-}
-
-div:after {
-    content: '';
-    display: inline-block;
-    width: 100%;
-}
+  hashtag a:hover, hashtag a:active {
+    color: #494949;
+  }
+  hashtag a:last-child {
+    margin: 0;
+  }*/
