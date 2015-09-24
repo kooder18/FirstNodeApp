@@ -241,6 +241,13 @@ footer {
             HOMEPAGE STYLES
             Kris
 -------------------------------------*/
+section{
+	text-align: justify;
+}
+
+span{
+	text-align: center;
+}
 /*
 h1{
 	text-align: center;

@@ -1,50 +1,67 @@
 <!DOCTYPE html> <!--finally a written standard for html-->
-<head> <!--beginning tag-->
-  <!--shows up on the tab of the browser  -->
-  <title>App USA</title>
-  <meta name="charset" content="utf-8"> <!--if you don't have the correct charset you get odd chars on the webpage-->
-  <!-- used for SEO purposes. -->
-  <meta name="description" content="CS2610 Demo">
-  <!--linking css to our html  -->
-  <link rel="stylesheet" href="style.css">
-</head> <!--closing tag-->
+<head>
+	<meta charset="UTF-8">
+	<title>Gramtracker - Track your favorite grams and find them later!</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
 <body>
-    <!--why do we need these headers? we can resize in css...-->
-	<!--tell the browser which is the most important  -->
-	<!--only have 1 h1 on a page (the most important)  -->
-	<h1>App USA</h1>
+	<!--Navagation quick links for user-->
+	<div class="gt-wrap">
+		<header>
+		<div class="nav-wrap">
+			<div class="welcome-msg ">
+				[Username]
+			</div>
+			<nav>
+				<a href="profile.html"><i class="fa fa-user"></i></a>
+				<a  href="dashboard.html"><i class="fa fa-dashboard"></i></a>
+				<a href="search.html"><i class="fa fa-search"></i></a>
+			</nav>
+		</div>
 
-	<!--tell the browser paragraph is an important word  -->
-	<!--<p><strong>paragraph</strong></p>-->
-	<!--make alt descriptive for screen readers.  -->
-	<!--alt is also important for SEO.  -->
-	<img src="" alt="picture" /> <!--self-closing tag-->
-	<!--how to link to other webpages  -->
-	<!--<ol> for an ordered list  -->
-
-	<!--changing the bullets in a ul  -->
+		<!--Now add logo to page-->
+    	<div class="gt-squeeze">
+			<div class="logo-wrap">
+				<a class="header-logo" href="index.html">
+				<img src="img/logo.png" alt="Gramtracker Logo" />
+				</a>
+			</div>
+		</div>
+    
+	<!--list of links && changing the bullets in a ul-->
 	<ul type = "circle">
 		<li><a href="#">Dashboard</a></li>
 		<li><a href="#">Profile</a></li>
 		<li><a href="#">Search</a></li>
 		<li><a href="#">Saved Searches</a></li>
-	</ul>
+	</ul></br>
 
-	<!--same thing...-->
-	<div class ="section">
-		<p>This is anything and everything about the App. Please Sign Up first so that
-		I can show you this fanatic App. If you are already a member then please Log In</p>
-		
+	<!--tell user what gramtracker is and have him/her sign-up/log-in to a social media with buttons-->
+	<section>
+		<p>This is gramtracker. The app that lets you see your photos from any of your
+		social media sites. Please Sign Up first so that I can show you your photos
+		and saved seaches with gramtracker. If you are already a member then please
+		Log In.</p></br>
+	</section>
+	
+	<span>	
 		<form method="link" action="dashboard.html">
-			<input type="submit" value="Sign Up" name="total"/>
-		</form><br/>
+			<input type="submit" value="Sign Up" name="total" class="btn"/>
+		</form><!--<br/>-->
 
 		<form method="link" action="profile.html">
-			<input type="submit" value="Log In" name="total2"/>
-		</form>
-	</div><section>
-
-	</section>
+			<input type="submit" value="Log In" name="total2" class="btn"/>
+		</form></br>
+	</span>
+	
+	<!--For last ork on data by a user if needed-->
+	<footer>
+		<div class="gt-squeeze">
+			<h4>Footer</h4>
+		</div>
+	</footer>
 </body>
 
 
