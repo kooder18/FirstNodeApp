@@ -82,6 +82,14 @@
   right:25px;
 }
 
+.button-left{
+  float: left;
+
+}
+
+.button-margin-left{
+  margin-left: 50px;
+}
 
 /*------------------------------------*\
               ¡TYPOGRAPHY
