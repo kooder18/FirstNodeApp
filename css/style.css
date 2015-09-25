@@ -122,8 +122,9 @@ body {
   position: relative;
 }
 
-img{
-  border-radius:25px;
+.rounded {
+  border-radius: 25px;
+
 }
 
 /*------------------------------------*\
