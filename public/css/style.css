@@ -1,0 +1,345 @@
+/*------------------------------------
+
+            GENERAL STYLES
+
+-------------------------------------*/
+
+@charset "UTF-8";
+/********************
+¡MIXINS
+********************/
+/********************
+¡CLASSES
+********************/
+.gt-clear:after, .gt-squeeze:after {
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+}
+
+.gt-squeeze {
+  position: relative;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+  height: 100%;
+  max-width: 1000px;
+}
+
+.gt-squeezeNoMore {
+  position: relative;
+  margin:0 auto;
+  padding: 200px 20px 10px 20px;
+  width: 100%;
+  height: 100%;
+  max-width: 1000px;
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/**
+* Floats
+*/
+.none {
+  float: none !important;
+}
+
+.pull--right {
+  float: right !important;
+}
+
+.pull--left {
+  float: left !important;
+}
+
+.clear {
+  display: block;
+  float: none;
+  clear: both;
+}
+
+
+input{
+  border:3px solid #f8f1c8;
+  color: #8fd4da;
+}
+/*------------------------------------*\
+              ¡BUTTONS
+\*------------------------------------*/
+.btn {
+  border-radius:7px;
+  background-color:  #e84724;
+  color:#fff;
+  border: none;
+  padding:10px;
+  margin:5px;
+  text-align: center;
+  text-decoration: none;
+  font-size:1.25em;
+}
+
+.btn:hover{
+  background-color:#8fd4da;
+}
+
+.group-btn{
+  position:absolute;
+  bottom:25px;
+  right:25px;
+}
+
+.button-left{
+  float: left;
+
+}
+
+.button-margin-left{
+  margin-left: 50px;
+}
+
+/*------------------------------------*\
+              ¡TYPOGRAPHY
+\*------------------------------------*/
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+/*------------------------------------*\
+              ¡GENERAL
+\*------------------------------------*/
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background: #fdfbef;
+  color: #494949;
+  font-family: sans-serif;
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+.gt-wrap {
+  height: auto !important;
+  height: 100%;
+  margin-bottom: -100px;
+  min-height: 100%;
+  position: relative;
+}
+
+.rounded {
+  border-radius: 25px;
+
+}
+
+/*------------------------------------*\
+                ¡BOX
+\*------------------------------------*/
+.box-wrap {
+  margin: 50px 0;
+}
+
+.box {
+  width: 32%;
+  float: left;
+  padding: 5px;
+  position: relative;
+}
+  .box:nth-child(n) {
+    margin-bottom: 2%;
+    margin-right: 2%;
+  }
+  .box:nth-child(3n) {
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+  .box img {
+    border-radius: 25px;
+    display: block;
+    margin: 0 0 10px;
+    width: 100%;
+  }
+
+  /*------------------------------------*\
+                  ¡TextBox
+  \*------------------------------------*/
+
+  .bio-box{
+
+    width: 400px;
+    height: 150px;
+    text-align: left;
+  }
+
+
+/*------------------------------------*\
+                ¡HEADER
+\*------------------------------------*/
+header {
+  background-color: #fff;
+  border-bottom: solid 3px #f8f1c8;
+  height: 120px;
+  margin: -1em 0 3em 0;
+}
+  header h1 {
+    line-height: 100px;
+  }
+
+  .logo-wrap{
+    text-align: center;
+    padding:15px;
+  }
+  a.header-logo{
+
+
+  }
+
+  a.header-logo img{
+  }
+/*------------------------------------*\
+                ¡NAV
+\*------------------------------------*/
+nav {
+  /*display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;*/
+
+}
+
+  .nav-wrap{
+    position:absolute;
+    top:50px;
+    right:100px;
+    width:16em;
+    z-index: 10;
+  }
+  nav a {
+    color: #c39a4e;
+    display: inline-block;
+    float: right;
+    margin: -10px 5px 0 0;
+    padding: 5px 10px;
+    text-decoration: none;
+    text-transform:uppercase;
+    font-weight:bold;
+    font-size:2em;
+
+  }
+    nav a:hover, nav a:active {
+      color: #8fd4da;
+    }
+
+
+nav a.nav-current{
+  color: #e84724;
+}
+.welcome-msg {
+  color:#8fd4da;
+  float:right;
+  line-height: normal;
+  padding-top:5px;
+}
+/*------------------------------------*\
+                ¡FOOTER
+\*------------------------------------*/
+.gt-push,
+footer {
+  height: 100px;
+}
+
+footer {
+  border-top: solid 1px #CCC;
+  padding: 10px 0;
+}
+/*------------------------------------
+            HOMEPAGE STYLES
+            Kris
+-------------------------------------*/
+section{
+	padding:10px;
+	font-size:1em;
+	color:#e84724;
+	margin-left: 200px;
+	margin-right: 200px;
+	/*width: 60em;*/
+}
+
+.home-btn{
+	text-align: center;
+}
+
+.home-text{
+  width:70%;
+  margin:0 auto 2em auto;
+  color:#8fd4da;
+
+}
+/*------------------------------------
+            DASHBOARD STYLES
+            Melody
+-------------------------------------*/
+
+
+
+
+/*.dashboard_display{
+  width:325px;
+  height:200px;
+  display:inline-block;
+  border: 1px solid #CCC;
+}
+.dashboard_display img{
+  width:90%;
+  margin:2.5%;
+}
+
+.dashboard_display button{
+
+}
+
+/*------------------------------------
+            PROFILE STYLES
+            Derek
+-------------------------------------*/
+.added-padding{
+}
+
+/*------------------------------------
+            SEARCH STYLES
+            Jackson
+-------------------------------------*/
+.gt-input-form{
+  border-radius:7px;
+  color:#8fd4da;
+  border-color: solid 3px #f8f1c8;
+  padding:10px;
+  margin:5px;
+  font-size:1.25em;
+}
+.hashtags{
+  float:left;
+}
