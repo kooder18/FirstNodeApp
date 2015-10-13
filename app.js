@@ -5,6 +5,8 @@ var express 				= require('express')
 	// , indexRoutes			= require('./routes/index')
   , searchRoutes 		= require('./routes/searchRoutes')
 	, userRoutes			= require('./routes/userRoutes')
+	, searchResult		= require('./routes/searchResult')
+	, searchHist			= require('./routes/searchHistory')
 
 var app = express();
 
@@ -15,6 +17,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // app.use('/', indexRoutes)
 app.use('/search', searchRoutes)
+app.use('/searchResult',searchResult)
+app.use('/searchHistory',searchHist)
 app.use('/user', userRoutes)
 
 app.listen(port)
