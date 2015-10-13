@@ -9,4 +9,13 @@ router.get('/dashboard', function(req, res) {
   })
 })
 
+router.get('/profile', function(req, res) {
+  res.render('profile', {
+    layout:'base'
+		// layout: 'auth_base',
+    // title: 'User Dashboard!',
+    // welcome: 'Welcome to your dashboard!'
+  })
+})
+
 module.exports = router

@@ -10,4 +10,24 @@ router.get('/', function(req, res) {
   })
 })
 
+
+router.get('/searchResult', function(req, res) {
+  res.render('searchResult', {
+    layout: 'base'
+		// layout: 'auth_base',
+    // title: 'User Dashboard!',
+    // welcome: 'Welcome to your dashboard!'
+  })
+})
+
+
+router.get('/searchHistory', function(req, res) {
+  res.render('searchHistory', {
+    layout: 'base'
+		// layout: 'auth_base',
+    // title: 'User Dashboard!',
+    // welcome: 'Welcome to your dashboard!'
+  })
+})
+
 module.exports = router
