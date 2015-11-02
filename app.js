@@ -1,9 +1,10 @@
 var express 				= require('express')
-	, exphbs					= require('express-handlebars')
-	, path						= require('path')
-  , port     				= 3000
-	// , indexRoutes			= require('./routes/index')
-  , searchRoutes 		= require('./routes/searchRoutes')
+	, exphbs				= require('express-handlebars')
+	, path					= require('path')
+  	, port     				= 3000
+  	, request				= require('request')
+  	, bodyParser			= require('body-parser')
+  	, searchRoutes 			= require('./routes/searchRoutes')
 	, userRoutes			= require('./routes/userRoutes')
 	, indexRoutes			= require('./routes/index')
 
