@@ -1,5 +1,6 @@
-<form>
-  <input type="text" placeholder="Search" class="gt-input-form" required>
-  <a href="/search/searchResult/" class="btn">search</a>
+<form method = "post">
+  <input type="text" placeholder="Search" class="gt-input-form" name = "search" required>
+  <input type = "submit" name = "submit" value = "submit" class = "btn">
+  {{!-- THIS NEEDS TO SAVE THE SEARCH TO THE DATABASE --}}
   <a href="/search/searchHistory/" class="btn">save search</a>
 </form>
