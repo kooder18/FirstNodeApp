@@ -1,13 +1,17 @@
-var express = require('express');
-var request = require('request');
+var express       = require('express')
+  , request       = require('request')
+  , cfg						= require('../config')
+  , session				= require('express-session')
+  , querystring		= require('querystring')
+
 var router = express.Router();
+
+
 //put your access token from instagram here
-var ACCESS_TOKEN = '';
-
-
+//var ACCESS_TOKEN = '1468594452.1677ed0.879f17b6fe9247cbb4891898571f606/6';
 router.get('/dashboard', function(req, res) {
   var options = {
-		url: 'https://api.instagram.com/v1/users/self/feed?access_token=' + ACCESS_TOKEN,
+		url: 'https://api.instagram.com/v1/users/self/feed?access_token=' +  req.session.access_token,
 	}
 	request.get(options, function(error, response, body){
 		console.log(body)
@@ -18,7 +22,6 @@ router.get('/dashboard', function(req, res) {
 })
   })
 
-
 router.get('/profile', function(req, res) {
   res.render('profile', {
     layout:'base'
@@ -26,6 +29,7 @@ router.get('/profile', function(req, res) {
     // title: 'User Dashboard!',
     // welcome: 'Welcome to your dashboard!'
   })
+  console.log('went to profile')
 })
 
 module.exports = router
