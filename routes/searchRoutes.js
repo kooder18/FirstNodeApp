@@ -6,7 +6,7 @@ var ACCESS_TOKEN = '';
 
 router.get('/', function(req, res) {
   res.render('search', {
-    layout: 'base'
+    layout: 'base',
 		// layout: 'auth_base',
     // title: 'User Dashboard!',
     // welcome: 'Welcome to your dashboard!'
@@ -22,7 +22,6 @@ router.post('/',function(req,res){
   }
   request.get(options,function(error,response,body){
     var feed = JSON.parse(body)
-    console.log(feed.data)
     res.render('searchResult',{
       //instagram stores all the users data in a data object.
       feed: feed.data

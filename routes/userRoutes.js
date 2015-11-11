@@ -14,7 +14,6 @@ router.get('/dashboard', function(req, res) {
 		url: 'https://api.instagram.com/v1/users/self/feed?access_token=' +  req.session.access_token,
 	}
 	request.get(options, function(error, response, body){
-		console.log(body)
 	var feed = JSON.parse(body)
 	res.render('dashboard', {
 		feed: feed.data
