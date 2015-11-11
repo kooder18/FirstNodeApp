@@ -44,7 +44,8 @@ router.get('/auth/finalize', function(req, res){
 
   request.post(options, function(error, response, body){
     var data = JSON.parse(body)
-    req.session.access_token = data.access_token
+    req.session.access_token = data.access_token,
+    req.session.user = data.user
     res.redirect('/dashboard')
   })
 })
@@ -55,10 +56,10 @@ router.get('/dashboard', function(req, res){
     url: 'https://api.instagram.com/v1/users/self/feed?access_token=' + req.session.access_token,
 	}
 	request.get(options, function(error, response, body){
-	 		console.log(body)
 		var feed = JSON.parse(body)
 		res.render('dashboard', {
-			feed: feed.data
+			feed: feed.data,
+      username: req.session.user.username
 		})
 	})
 
