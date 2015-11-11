@@ -1,6 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser')
 var request = require('request')
+var session = require('express-session')
 var router = express.Router();
 var ACCESS_TOKEN = '';
 
@@ -17,7 +18,7 @@ router.post('/',function(req,res){
   var form = req.body
   console.log(form.search)
     var options = {
-      url:'https://api.instagram.com/v1/tags/'+ form.search + '/media/recent?access_token=' + ACCESS_TOKEN,
+      url:'https://api.instagram.com/v1/tags/'+ form.search + '/media/recent?access_token=' + req.session.access_token,
     // url: 'https://api.instagram.com/v1/tags/search?q=' + form.search + '&access_token=' + ACCESS_TOKEN,
   }
   request.get(options,function(error,response,body){
@@ -35,7 +36,7 @@ router.post('/searchResult',function(req,res){
   var form = req.body
   console.log(form.search)
     var options = {
-      url:'https://api.instagram.com/v1/tags/'+ form.search + '/media/recent?access_token=' + ACCESS_TOKEN,
+      url:'https://api.instagram.com/v1/tags/'+ form.search + '/media/recent?access_token=' + req.session.access_token,
     // url: 'https://api.instagram.com/v1/tags/search?q=' + form.search + '&access_token=' + ACCESS_TOKEN,
   }
   request.get(options,function(error,response,body){
