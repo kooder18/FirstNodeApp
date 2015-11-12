@@ -83,7 +83,7 @@ input{
   margin:5px;
   text-align: center;
   text-decoration: none;
-  font-size:1.25em;
+  font-size:.75em;
 }
 
 .btn:hover{
@@ -103,6 +103,9 @@ input{
 
 .button-margin-left{
   margin-left: 50px;
+}
+.no-hover:hover{
+  background-color: #e84724;
 }
 
 /*------------------------------------*\

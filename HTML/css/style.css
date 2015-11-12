@@ -77,13 +77,14 @@ input{
 .btn {
   border-radius:7px;
   background-color:  #e84724;
+  background-color:purple;
   color:#fff;
   border: none;
   padding:10px;
   margin:5px;
   text-align: center;
   text-decoration: none;
-  font-size:1.25em;
+  font-size:.75em;
 }
 
 .btn:hover{
