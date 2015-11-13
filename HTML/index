@@ -1,0 +1,36 @@
+<!DOCTYPE html> <!--finally a written standard for html-->
+<head>
+	<meta charset="UTF-8">
+	<title>Gramtracker - Track your favorite grams and find them later!</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+<body>
+	<!--Navagation quick links for user-->
+	<div class="gt-wrap">
+		<!--Now add group logo to page-->
+    	<div class="gt-squeezeNoMore">
+			<div class="logo-wrap">
+				<a class="header-logo" href="index.html">
+				<img src="img/logo-large.png" alt="Gramtracker Logo Big"/></a>
+			</div>
+		</div>
+
+		<!--tell user what gramtracker is and have him/her sign-up/log-in to a social media with buttons-->
+		<div class="home-text">
+		  <p class="home-msg">This is gramtracker. The app lets you see your photos
+		  from any of your social media sites. Please Log In first so that I can show
+		  you your photos, likes, and saved seaches with gramtracker.</p>
+		</div>
+
+		<!--Let user login in with Instagram/Facebook/Twitter/etc. for photo searching, likes, and feed.-->
+		<!--Add buttons for each socitly media website && send user to authorization for each site below-->
+		<div class="home-btn">
+		  <form method="link" action="/authorize">
+			<input type="submit" value="LOGIN WITH INSTAGRAM" name="total" class="btn"/>
+		  </form>
+				</div>
+			</div>
+</body>
+<!--javascript modernizer for html5  -->
