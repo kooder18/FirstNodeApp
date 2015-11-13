@@ -28,7 +28,10 @@ router.get('/authorize', function(req, res){
   res.redirect(url)
 })
 
-router.get('/auth/finalize', function(req, res){
+router.get('/auth/finalize', function(req, res, next) {
+  if (req.query.error == 'access_denied') {
+    return res.redirect('/');
+  }
   var post_data = {
     client_id: cfg.client_id,
     client_secret: cfg.client_secret,
@@ -43,7 +46,14 @@ router.get('/auth/finalize', function(req, res){
   }
 
   request.post(options, function(error, response, body){
+    try {
     var data = JSON.parse(body)
+
+  }
+
+    catch(err) {
+      return next(err)
+    }
     req.session.access_token = data.access_token,
     req.session.user = data.user
     res.redirect('/dashboard')
@@ -56,7 +66,16 @@ router.get('/dashboard', function(req, res){
     url: 'https://api.instagram.com/v1/users/self/feed?access_token=' + req.session.access_token,
 	}
 	request.get(options, function(error, response, body){
+    try {
 		var feed = JSON.parse(body)
+    if(feed.meta.code > 200) {
+      return next(feed.meta.error_message);
+    }
+  }
+
+  catch(err) {
+    return next(err)
+  }
 		res.render('dashboard', {
 			feed: feed.data,
       username: req.session.user.username
