@@ -63,6 +63,13 @@ router.get('/dashboard', function(req, res){
   var options = {
     url: 'https://api.instagram.com/v1/users/self/feed?access_token=' + req.session.access_token,
 	}
+  console.log(req.session)
+  // var currentdate = new Date();
+  // if(req.session.cookie._expires > currentdate){
+  //   console.log("the cookie is fine")
+  // }
+
+  // console.log(currentdate)
 	request.get(options, function(error, response, body){
     try {
 		var feed = JSON.parse(body)

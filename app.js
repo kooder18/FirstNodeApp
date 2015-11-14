@@ -23,7 +23,7 @@ app.use(session({
   secret: 'lksdgfiertmf',
   resave: false,
   saveUnitialized: true,
-
+  cookie:{maxAge:6000000},
 }))
 
 app.use('/', indexRoutes)
