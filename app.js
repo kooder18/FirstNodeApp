@@ -8,6 +8,9 @@ var express 				= require('express')
 		, userRoutes		= require('./routes/userRoutes')
 		, indexRoutes		= require('./routes/index')
 	, session					= require('express-session')
+	, MongoClient     = require('mongodb').MongoClient
+	, db              = require('./db')
+	, Users           = require('./models/users')
 
 var app = express();
 
@@ -39,8 +42,27 @@ app.use(function(err, req, res, next) {
     });
 });
 
+app.post('/', function(req, res) {
+
+    var user = {
+			username: 'gigity',
+			fname: 'glen',
+			lname: 'quagmire'
+		}
+    Users.insert(user, function() {
+      console.log('It worked!')
+    })
+})
 
 
-app.listen(port)
 
-console.log('Server running at http:127.0.0.1:' + port + '/')
+db.connect('mongodb://dbuser:password@ds053964.mongolab.com:53964/test1', function(err){
+  if(err) {
+    console.log('Unable to connect to Mongo')
+    process.exit(1)
+  } else {
+    app.listen(3000, function() {
+      console.log('Listening on port 3000')
+    })
+  }
+})
