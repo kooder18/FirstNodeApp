@@ -44,7 +44,7 @@ app.use(function(err, req, res, next) {
 
 
 
-db.connect('mongodb://dbuser:password@ds053964.mongolab.com:53964/test1', function(err){
+db.connect('mongodb://dbuser:password@ds063134.mongolab.com:63134/gramtracker', function(err){
   if(err) {
     console.log('Unable to connect to Mongo')
     process.exit(1)

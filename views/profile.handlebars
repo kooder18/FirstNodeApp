@@ -5,16 +5,16 @@
 {{#if success}}
 <p>{{success}}</p>
 {{/if}}
-<img src="/images/profile.jpg" alt="an image of a circle">
+<img src="{{user.profile_picture}}" alt="an image of a circle">
 
   </div>
   <div class ="button-left button-margin-left">
 
 <form method = "post">
-  <input type ="text" placeholder="Name" name = "name" class="gt-input-form" required>
+  <input type ="text" placeholder="Name" name = "name" value = "{{user.full_name}}" ="gt-input-form" required>
 </form>
 <form method = "post">
-  <input type ="text" placeholder="Email" name = "email" class="gt-input-form" required>
+  <input type ="text" placeholder="Email" name = "email" class="gt-input-form" value = "{{user.email}}" required>
 </form>
 <form method = "post">
   <input type ="text" placeholder="Bio" name = "bio" class="gt-input-form bio-box" value ="{{user.bio}}" required>

@@ -11,6 +11,7 @@ exports.insert = function(user, callback) {
     assert.equal(err, null)
     assert.equal(1, result.result.n)
     assert.equal(1, result.ops.length)
+    console.log(user)
     console.log('Inserted 1 document into the users collection')
     callback(result)
   })

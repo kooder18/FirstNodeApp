@@ -41,26 +41,50 @@ router.get('/dashboard', function(req, res) {
   })
 
 router.get('/profile', function(req, res) {
-  res.render('profile', {
-    layout:'base'
-		// layout: 'auth_base',
-    // title: 'User Dashboard!',
-    // welcome: 'Welcome to your dashboard!'
-  })
-  console.log('went to profile')
+  if(req.session.userId){
+    //find user
+    Users.find(req.session.userId,function(document){
+      //if the user doesn't exist, put them back to the homepage
+      if(!document) return res.redirect('/')
+      console.log(document)
+      res.render('profile',{
+            //Render the update view
+        user:document
+      })
+    })
+    //the user doesn't exist
+  }else{
+    res.redirect('/')
+  }
+
+
+
+
+
+
+
+  // res.render('profile', {
+  //   layout:'base'
+		// // layout: 'auth_base',
+  //   // title: 'User Dashboard!',
+  //   // welcome: 'Welcome to your dashboard!'
+  // })
+  // console.log('went to profile')
 })
 
+//something odd is happening when trying to add text to the profile page.
 //there are bugs in the profile page, its only sending the bio form as the user.
 //this should be an update rather than insert, but i'll leave it like it is until we get the data from instagram
 router.post('/profile', function(req, res) {
     var user = req.body
+    //how do we update only one field?
     console.log(user)
     // console.log(user)
-    Users.insert(user, function() {
+    Users.create(user, function() {
       // res.redirect('/user/profile')
       res.render('profile',{
         user:user,
-        success : "successful update"
+        success : "successful creation.  BUT THIS NEEDS TO BE AN UPDATE!"
       })
     })
 })

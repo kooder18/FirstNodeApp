@@ -82,16 +82,12 @@ router.get('/dashboard', function(req, res){
   var options = {
     url: 'https://api.instagram.com/v1/users/self/feed?access_token=' + req.session.access_token,
 	}
-  //adding the user to the database as soon as they login
-  console.log(req.session)
-  user = req.body
-  Users.insert(user, function() {
-
+  //adding the user to the database as soon as they login 
+  console.log(req.session.user)
+  user = req.session.user
+  Users.insert(user, function(result) {
+      req.session.userId = result.ops[0]._id;
   })
-  // var currentdate = new Date();
-  // if(req.session.cookie._expires > currentdate){
-  //   console.log("the cookie is fine")
-  // }
 
   // console.log(currentdate)
 	request.get(options, function(error, response, body){
