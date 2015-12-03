@@ -3,6 +3,10 @@ var bodyParser = require('body-parser')
 var request = require('request')
 var session = require('express-session')
 var router = express.Router();
+var MongoClient     = require('mongodb').MongoClient
+var db              = require('../db')
+var Users           = require('../models/users')
+
 var ACCESS_TOKEN = '';
 
 router.get('/', function(req, res) {
@@ -14,6 +18,8 @@ router.get('/', function(req, res) {
   })
 })
 
+
+//in both posts we also need to find the user based on id and add a saved search to their object based on whether they selected the "save search" button or not
 router.post('/',function(req,res){
   var form = req.body
   console.log(form.search)
@@ -59,5 +65,6 @@ router.get('/searchHistory', function(req, res) {
 		
   })
 })
+
 
 module.exports = router

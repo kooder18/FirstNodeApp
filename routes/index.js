@@ -3,6 +3,10 @@ var express       = require('express')
   , cfg						= require('../config')
   , session				= require('express-session')
   , querystring		= require('querystring')
+  , MongoClient     = require('mongodb').MongoClient
+  , db              = require('../db')
+  , Users           = require('../models/users')
+
 
 var router = express.Router();
 
@@ -58,12 +62,32 @@ router.get('/auth/finalize', function(req, res, next) {
   })
 })
 
+router.get('/test',function(req,res){
+      var user = //req.body
+    {
+      username: "usernameTEST",
+      lname   : "lnameTEST",
+      fname   : "fnameTEST",
+      id      : 10,
+    }
+    // console.log(user)
+    Users.insert(user, function() {
+      console.log('It worked!')
+      res.redirect('/dashboard')
+    })
+})
+
 
 router.get('/dashboard', function(req, res){
   var options = {
     url: 'https://api.instagram.com/v1/users/self/feed?access_token=' + req.session.access_token,
 	}
+  //adding the user to the database as soon as they login
   console.log(req.session)
+  user = req.body
+  Users.insert(user, function() {
+
+  })
   // var currentdate = new Date();
   // if(req.session.cookie._expires > currentdate){
   //   console.log("the cookie is fine")
@@ -88,6 +112,9 @@ router.get('/dashboard', function(req, res){
 	})
 
 })
+
+
+
 
 
 module.exports = router

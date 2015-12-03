@@ -3,6 +3,10 @@ var express       = require('express')
   , cfg						= require('../config')
   , session				= require('express-session')
   , querystring		= require('querystring')
+  , MongoClient     = require('mongodb').MongoClient
+  , db              = require('../db')
+  , Users           = require('../models/users')
+
 
 var router = express.Router();
 
@@ -45,5 +49,21 @@ router.get('/profile', function(req, res) {
   })
   console.log('went to profile')
 })
+
+//there are bugs in the profile page, its only sending the bio form as the user.
+//this should be an update rather than insert, but i'll leave it like it is until we get the data from instagram
+router.post('/profile', function(req, res) {
+    var user = req.body
+    console.log(user)
+    // console.log(user)
+    Users.insert(user, function() {
+      // res.redirect('/user/profile')
+      res.render('profile',{
+        user:user,
+        success : "successful update"
+      })
+    })
+})
+
 
 module.exports = router

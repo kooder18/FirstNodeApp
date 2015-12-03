@@ -26,7 +26,6 @@ app.use(session({
   secret: 'lksdgfiertmf',
   resave: false,
   saveUnitialized: true,
-  cookie:{maxAge:6000000},
 }))
 
 app.use('/', indexRoutes)
@@ -42,17 +41,6 @@ app.use(function(err, req, res, next) {
     });
 });
 
-app.post('/', function(req, res) {
-
-    var user = {
-			username: 'gigity',
-			fname: 'glen',
-			lname: 'quagmire'
-		}
-    Users.insert(user, function() {
-      console.log('It worked!')
-    })
-})
 
 
 

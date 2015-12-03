@@ -2,23 +2,25 @@
   <div class="gt-squeeze added-padding">
     <div class="gt-box-wrap">
     <div class ="rounded button-left">
-
+{{#if success}}
+<p>{{success}}</p>
+{{/if}}
 <img src="/images/profile.jpg" alt="an image of a circle">
 
   </div>
   <div class ="button-left button-margin-left">
 
-<form>
-  <input type ="text" placeholder="Name" class="gt-input-form" required>
+<form method = "post">
+  <input type ="text" placeholder="Name" name = "name" class="gt-input-form" required>
 </form>
-<form>
-  <input type ="text" placeholder="Email" class="gt-input-form" required>
+<form method = "post">
+  <input type ="text" placeholder="Email" name = "email" class="gt-input-form" required>
 </form>
-<form>
-  <input type ="text" placeholder="Bio" class="gt-input-form bio-box" required>
+<form method = "post">
+  <input type ="text" placeholder="Bio" name = "bio" class="gt-input-form bio-box" value ="{{user.bio}}" required>
 </form>
 
-<button class ="btn">Submit</button>
+<button class ="btn" type ="submit">Submit</button>
   </div>
   </div>
 </div>
