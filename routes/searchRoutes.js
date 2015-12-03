@@ -26,12 +26,35 @@ router.post('/',function(req,res){
     var options = {
       url:'https://api.instagram.com/v1/tags/'+ form.search + '/media/recent?access_token=' + req.session.access_token,
   }
-  request.get(options,function(error,response,body){
-    var feed = JSON.parse(body)
-    res.render('searchResult',{
-      feed: feed.data
+  //WE SHOULD ONLY DO ALL OF THIS IF THE USER SELECTS "SAVE SEARCH"
+  if(req.session.userId){
+    //find user
+    Users.find(req.session.userId,function(document){
+      if(!document) return res.redirect('/')
+        console.log(document.username)
+      //saving a search into the saved_searches array
+      document.saved_searches.push(form.search) 
+        // console.log(document.saved_searches[0])
+      // document.saved_searches.push(form.search)
+      // console.log(document)
+  //update the user object in the db.
+      Users.update(document,function(){
+          request.get(options,function(error,response,body){
+            var feed = JSON.parse(body)
+            res.render('searchResult',{
+              feed: feed.data
+            })
+          })
+      })
     })
-  })
+    //the user doesn't exist
+  }else{
+    res.redirect('/')
+  }
+
+
+
+
 })
 
 

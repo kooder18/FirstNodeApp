@@ -80,6 +80,7 @@ router.post('/profile', function(req, res) {
     //how do we update only one field?
     console.log(user)
     // console.log(user)
+    //this fails because of the odd stuff going on in the frontend.
     Users.create(user, function() {
       // res.redirect('/user/profile')
       res.render('profile',{

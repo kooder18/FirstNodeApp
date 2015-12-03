@@ -85,6 +85,8 @@ router.get('/dashboard', function(req, res){
   //adding the user to the database as soon as they login 
   console.log(req.session.user)
   user = req.session.user
+  //appending a saved searches array to the object for testing purposes.
+  user.saved_searches = []
   Users.insert(user, function(result) {
       req.session.userId = result.ops[0]._id;
   })
