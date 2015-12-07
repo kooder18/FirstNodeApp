@@ -25,7 +25,7 @@ exports.find = function(id,callback){
   // Find a user
   //findOne is a variant of find, we only want 1 instead of ALL users of same id.
   //the ObjectId(id) ensures that we send them an object rather than a string. mongoDB won't accept a string.
-  collection.findOne({'_id':ObjectId(id)}, function(err, document) {
+  collection.findOne({'_id':id}, function(err, document) {
     assert.equal(err, null)
     // assert.equal(1, result.result.n)
     // assert.equal(1, result.ops.length)

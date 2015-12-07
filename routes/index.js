@@ -50,48 +50,33 @@ router.get('/auth/finalize', function(req, res, next) {
   request.post(options, function(error, response, body){
     try {
     var data = JSON.parse(body)
-
   }
 
     catch(err) {
       return next(err)
     }
+    var user = data.user
+    req.session.userId = data.user.id
     req.session.access_token = data.access_token,
     req.session.user = data.user
-    res.redirect('/dashboard')
+    user._id = user.id
+    delete user.id
+    Users.find(user._id,function(document){
+      if(!document){
+        Users.insert(user,function(result){
+          res.redirect('/dashboard')
+        })
+      }else{
+        res.redirect('/dashboard')
+      }
+    })
   })
 })
-
-router.get('/test',function(req,res){
-      var user = //req.body
-    {
-      username: "usernameTEST",
-      lname   : "lnameTEST",
-      fname   : "fnameTEST",
-      id      : 10,
-    }
-    // console.log(user)
-    Users.insert(user, function() {
-      console.log('It worked!')
-      res.redirect('/dashboard')
-    })
-})
-
 
 router.get('/dashboard', function(req, res){
   var options = {
     url: 'https://api.instagram.com/v1/users/self/feed?access_token=' + req.session.access_token,
 	}
-  //adding the user to the database as soon as they login 
-  console.log(req.session.user)
-  user = req.session.user
-  //appending a saved searches array to the object for testing purposes.
-  user.saved_searches = []
-  Users.insert(user, function(result) {
-      req.session.userId = result.ops[0]._id;
-  })
-
-  // console.log(currentdate)
 	request.get(options, function(error, response, body){
     try {
 		var feed = JSON.parse(body)

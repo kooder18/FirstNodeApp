@@ -21,6 +21,7 @@ router.get('/', function(req, res) {
 
 //in both posts we also need to find the user based on id and add a saved search to their object based on whether they selected the "save search" button or not
 router.post('/',function(req,res){
+  console.log(req)
   var form = req.body
   console.log(form.search)
     var options = {
@@ -40,9 +41,11 @@ router.post('/',function(req,res){
   //update the user object in the db.
       Users.update(document,function(){
           request.get(options,function(error,response,body){
+            console.log(form.search)
             var feed = JSON.parse(body)
             res.render('searchResult',{
-              feed: feed.data
+              feed: feed.data,
+              search: form.search
             })
           })
       })
@@ -59,14 +62,13 @@ router.post('/',function(req,res){
 
 
 router.post('/searchResult',function(req,res){
+  console.log(req)
   var form = req.body
-  console.log(form.search)
-    var options = {
+  var options = {
       url:'https://api.instagram.com/v1/tags/'+ form.search + '/media/recent?access_token=' + req.session.access_token,
   }
   request.get(options,function(error,response,body){
     var feed = JSON.parse(body)
-    console.log(feed.data)
     res.render('searchResult',{
       feed: feed.data
     })
