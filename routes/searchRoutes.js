@@ -12,6 +12,7 @@ var ACCESS_TOKEN = '';
 router.get('/', function(req, res) {
   res.render('search', {
     layout: 'base',
+    username: req.session.user.username,
 		// layout: 'auth_base',
     // title: 'User Dashboard!',
     // welcome: 'Welcome to your dashboard!'
@@ -32,8 +33,9 @@ router.post('/',function(req,res){
         var feed = JSON.parse(body)
         console.log(feed)
         res.render('searchResult',{
-        feed:feed.data,
-        search:form.tag
+          feed:feed.data,
+          search:form.tag,
+          username: req.session.user.username
         })
     })
   }
@@ -44,7 +46,8 @@ router.post('/',function(req,res){
         //here we need to pass the tag history to the frontend.
           Users.find(userId,function(document){
               res.render('searchHistory',{
-                tags:document.tags
+                tags:document.tags,
+                username: req.session.user.username
               })
           })
       })
@@ -54,7 +57,8 @@ router.post('/',function(req,res){
     Users.removeTag(userId,form.tag,function(){
           Users.find(userId,function(document){
               res.render('searchHistory',{
-                tags:document.tags
+                tags:document.tags,
+                username: req.session.user.username
               })
           })
     })

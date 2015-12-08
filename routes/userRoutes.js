@@ -43,7 +43,8 @@ router.get('/profile', function(req, res) {
       console.log(document)
       res.render('profile',{
             //Render the update view
-        user:document
+        user:document,
+        username: req.session.user.username
       })
     })
     //the user doesn't exist
