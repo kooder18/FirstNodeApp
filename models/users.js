@@ -48,3 +48,37 @@ exports.update = function(user,callback){
     callback()
   })
 }
+
+
+exports.addTag = function(userId,tag,callback){
+  //get the users collection
+  var collection = db.get().collection('users') 
+  // Add the tag
+  collection.update(
+    {'_id': userId},
+    { $push: {tags: tag}}, 
+    function(err, result) {
+      assert.equal(err, null)
+      assert.equal(1, result.result.n)
+      // assert.equal(1, result.ops.length)
+      console.log('pushed 1 tag to the user')
+      callback()
+  })
+}
+
+
+exports.removeTag = function(userId,tag,callback){
+  //get the users collection
+  var collection = db.get().collection('users') 
+  // Add the tag
+  collection.update(
+    {'_id': userId},
+    { $pull: {tags: tag}}, 
+    function(err, result) {
+      assert.equal(err, null)
+      assert.equal(1, result.result.n)
+      // assert.equal(1, result.ops.length)
+      console.log('pushed 1 tag to the user')
+      callback()
+  })
+}

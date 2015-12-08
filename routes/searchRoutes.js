@@ -18,43 +18,36 @@ router.get('/', function(req, res) {
   })
 })
 
-
-//in both posts we also need to find the user based on id and add a saved search to their object based on whether they selected the "save search" button or not
 router.post('/',function(req,res){
-  console.log(req)
+  var userId = req.session.userId
+  var tags = req.session.tags
   var form = req.body
-  console.log(form.search)
-    var options = {
-      url:'https://api.instagram.com/v1/tags/'+ form.search + '/media/recent?access_token=' + req.session.access_token,
+  console.log(tags)
+  var options = {
+      url:'https://api.instagram.com/v1/tags/'+ form.tag + '/media/recent?access_token=' + req.session.access_token,
   }
-  //WE SHOULD ONLY DO ALL OF THIS IF THE USER SELECTS "SAVE SEARCH"
-  if(req.session.userId){
-    //find user
-    Users.find(req.session.userId,function(document){
-      if(!document) return res.redirect('/')
-        console.log(document.username)
-      //saving a search into the saved_searches array
-      document.saved_searches.push(form.search) 
-        // console.log(document.saved_searches[0])
-      // document.saved_searches.push(form.search)
-      // console.log(document)
-  //update the user object in the db.
-      Users.update(document,function(){
-          request.get(options,function(error,response,body){
-            console.log(form.search)
-            var feed = JSON.parse(body)
-            res.render('searchResult',{
-              feed: feed.data,
-              search: form.search
-            })
+  if(form.search){
+    console.log("there is a value here")
+      request.get(options,function(error,response,body){
+        var feed = JSON.parse(body)
+        res.render('searchResult',{
+        feed:feed.data,
+        search:form.tag
+        })
+    })
+  }else if(form.save){
+      console.log("SAVE BUTTON PRESSED")
+            //Add the tag to the user
+      Users.addTag(userId, form.tag, function(){
+        //here we need to pass the tag history to the frontend.
+          Users.find(userId,function(document){
+              res.render('searchHistory',{
+                tags:document.tags
+              })
           })
       })
-    })
-    //the user doesn't exist
-  }else{
-    res.redirect('/')
-  }
 
+  }
 
 
 
@@ -62,17 +55,44 @@ router.post('/',function(req,res){
 
 
 router.post('/searchResult',function(req,res){
-  console.log(req)
+  console.log(req.body)
+ var userId = req.session.userId
+  var tags = req.session.tags
   var form = req.body
+  console.log(tags)
   var options = {
-      url:'https://api.instagram.com/v1/tags/'+ form.search + '/media/recent?access_token=' + req.session.access_token,
+      url:'https://api.instagram.com/v1/tags/'+ form.tag + '/media/recent?access_token=' + req.session.access_token,
   }
-  request.get(options,function(error,response,body){
-    var feed = JSON.parse(body)
-    res.render('searchResult',{
-      feed: feed.data
+  if(form.search){
+    console.log("there is a value here")
+      request.get(options,function(error,response,body){
+        var feed = JSON.parse(body)
+        res.render('searchResult',{
+        feed:feed.data,
+        search:form.tag
+        })
     })
-  })
+  }else if(form.save){
+      console.log("SAVE BUTTON PRESSED")
+            //Add the tag to the user
+      Users.addTag(userId, form.tag, function(){
+        //here we need to pass the tag history to the frontend.
+          Users.find(userId,function(document){
+              res.render('searchHistory',{
+                tags:document.tags
+              })
+          })
+      })
+
+  }else{
+      request.get(options,function(error,response,body){
+        var feed = JSON.parse(body)
+        res.render('searchResult',{
+        feed:feed.data,
+        search:form.tag
+        })
+    })    
+  }
 })
 
 
@@ -87,7 +107,7 @@ router.get('/searchResult', function(req, res) {
 router.get('/searchHistory', function(req, res) {
   res.render('searchHistory', {
     layout: 'base'
-		
+//pass user saved tag data here		
   })
 })
 

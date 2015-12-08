@@ -59,6 +59,7 @@ router.get('/auth/finalize', function(req, res, next) {
     req.session.userId = data.user.id
     req.session.access_token = data.access_token,
     req.session.user = data.user
+    console.log(data.user)
     user._id = user.id
     delete user.id
     Users.find(user._id,function(document){
@@ -74,6 +75,7 @@ router.get('/auth/finalize', function(req, res, next) {
 })
 
 router.get('/dashboard', function(req, res){
+  console.log(req.session.user)
   var options = {
     url: 'https://api.instagram.com/v1/users/self/feed?access_token=' + req.session.access_token,
 	}

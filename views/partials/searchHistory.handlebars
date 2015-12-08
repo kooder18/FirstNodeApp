@@ -1,5 +1,12 @@
 <div class="hashtags">
   <nav>
-    <a href="/search/searchResult" class="btn">#TEST</a>
+  	{{#each tags}}
+  		<form action="/search/searchResult" method = "post">
+  		{{this}}
+  		<input type = "hidden" name = "tag" value="{{this}}">
+  		<button type = "submit"></button>
+  	</form>
+{{!--     <a href="/search/searchResult" class="btn">#TEST</a> --}}
+    {{/each}}
   </nav>
 </div>
