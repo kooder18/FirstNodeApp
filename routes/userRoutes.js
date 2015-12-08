@@ -16,12 +16,6 @@ router.get('/dashboard', function(req, res) {
   var options = {
     url: 'https://api.instagram.com/v1/users/self/feed?access_token=' + req.session.access_token,
   }
-  // var currentdate = new Date();
-  // if(req.session.cookie._expires > currentdate){
-  //   console.log("the cookie is fine")
-  // }
-
-  // console.log(currentdate)
   request.get(options, function(error, response, body){
     try {
     var feed = JSON.parse(body)
@@ -76,18 +70,19 @@ router.get('/profile', function(req, res) {
 //there are bugs in the profile page, its only sending the bio form as the user.
 //this should be an update rather than insert, but i'll leave it like it is until we get the data from instagram
 router.post('/profile', function(req, res) {
-    var user = req.body
-    //how do we update only one field?
-    console.log(user)
-    // console.log(user)
-    //this fails because of the odd stuff going on in the frontend.
-    Users.create(user, function() {
-      // res.redirect('/user/profile')
-      res.render('profile',{
-        user:user,
-        success : "successful creation.  BUT THIS NEEDS TO BE AN UPDATE!"
-      })
-    })
+  console.log(req.body)
+    // if(req.body.bio){
+    //   console.log('bio edited')
+    // }else if(req.body.username){
+    //     Users.updateUsername(req.session.userId,req.body, function() {
+    //       // res.redirect('/user/profile')
+    //       res.render('profile',{
+    //         user:document,
+    //         success : "Successfully updated the username"
+    //       })
+    //     })     
+    // }
+
 })
 
 

@@ -1,10 +1,11 @@
 <div class="hashtags">
   <nav>
   	{{#each tags}}
-  		<form action="/search/searchResult" method = "post">
+  		<form method = "post">
   		{{this}}
   		<input type = "hidden" name = "tag" value="{{this}}">
-  		<button type = "submit"></button>
+  		<input type = "submit" name = "search" value = "re-search" class = "btn">
+  		<input type = "submit" name = "remove" value = "delete" class = "btn">
   	</form>
 {{!--     <a href="/search/searchResult" class="btn">#TEST</a> --}}
     {{/each}}

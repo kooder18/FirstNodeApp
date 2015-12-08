@@ -34,11 +34,9 @@ exports.find = function(id,callback){
   })
 }
 
-
 exports.update = function(user,callback){
   //get the users collection
   var collection = db.get().collection('users')
-  user._id = ObjectId(user._id)
   // console.log(user._id)
   collection.update({'_id': user._id},user, function(err, result) {
     assert.equal(err, null)
@@ -50,13 +48,15 @@ exports.update = function(user,callback){
 }
 
 
+
+
 exports.addTag = function(userId,tag,callback){
   //get the users collection
   var collection = db.get().collection('users') 
   // Add the tag
   collection.update(
     {'_id': userId},
-    { $push: {tags: tag}}, 
+    { $addToSet: {tags: tag}}, 
     function(err, result) {
       assert.equal(err, null)
       assert.equal(1, result.result.n)
