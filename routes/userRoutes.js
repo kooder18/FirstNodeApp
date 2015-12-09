@@ -71,7 +71,34 @@ router.get('/profile', function(req, res) {
 //there are bugs in the profile page, its only sending the bio form as the user.
 //this should be an update rather than insert, but i'll leave it like it is until we get the data from instagram
 router.post('/profile', function(req, res) {
+  console.log("POSTING FROM THE PROFILE PAGE")
   console.log(req.body)
+  req.session.user.bio = req.body.bio
+  req.session.user.website = req.body.website
+  req.session.user.full_name = req.body.full_name  
+  req.session.user.username = req.body.username 
+  if(req.session.userId){
+  Users.update(req.session.user, function(){
+    Users.find(req.session.userId,function(document){
+      //if the user doesn't exist, put them back to the homepage
+      if(!document) return res.redirect('/')
+      console.log(document)
+      res.render('profile',{
+            //Render the update view
+        user:document,
+        username: req.session.user.username
+      })
+    })
+  })
+}else{
+    res.redirect('/')  
+}
+  // if(req.body.bio){
+  //   console.log("BIO CHANGED")
+  //   console.log(req.session.user)
+  //   req.session.user.bio = req.body.bio
+  // }
+  // console.log(req.body)
     // if(req.body.bio){
     //   console.log('bio edited')
     // }else if(req.body.username){
