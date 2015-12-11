@@ -12,7 +12,7 @@ var router = express.Router();
 
 
 
-router.get('/dashboard', function(req, res) {
+router.get('/dashboard', function(req, res, next) {
   var options = {
     url: 'https://api.instagram.com/v1/users/self/feed?access_token=' + req.session.access_token,
   }
@@ -75,8 +75,8 @@ router.post('/profile', function(req, res) {
   console.log(req.body)
   req.session.user.bio = req.body.bio
   req.session.user.website = req.body.website
-  req.session.user.full_name = req.body.full_name  
-  req.session.user.username = req.body.username 
+  req.session.user.full_name = req.body.full_name
+  req.session.user.username = req.body.username
   if(req.session.userId){
   Users.update(req.session.user, function(){
     Users.find(req.session.userId,function(document){
@@ -91,7 +91,7 @@ router.post('/profile', function(req, res) {
     })
   })
 }else{
-    res.redirect('/')  
+    res.redirect('/')
 }
   // if(req.body.bio){
   //   console.log("BIO CHANGED")
@@ -108,7 +108,7 @@ router.post('/profile', function(req, res) {
     //         user:document,
     //         success : "Successfully updated the username"
     //       })
-    //     })     
+    //     })
     // }
 
 })
