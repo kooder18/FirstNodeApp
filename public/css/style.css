@@ -90,6 +90,38 @@ input{
   background-color:#8fd4da;
 }
 
+.search-btn {
+  border-radius:7px;
+  background-color:  #e84724;
+  color:#fff;
+  border: none;
+  padding:0px;
+  margin:0px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.search-btn:hover{
+  background-color:#e84724;
+}
+
+.saved-search-item{
+  background-color:#e84724;
+  border-radius:7px;
+  color: #fff;
+width:auto;
+display:inline-block;
+font-size:1.25em;
+padding:6px 10px 10px 10px;
+margin:5px;
+font-size:1.25em;
+
+}
+
+.bold{
+  font-weight:bolder;
+}
+
 .group-btn{
   position:absolute;
   bottom:25px;
@@ -335,14 +367,40 @@ section{
             SEARCH STYLES
             Jackson
 -------------------------------------*/
+::-webkit-input-placeholder {
+   color: #BF974C;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #BF974C;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #BF974C;
+}
+
+:-ms-input-placeholder {
+   color: #BF974C;
+}
+
 .gt-input-form{
   border-radius:7px;
-  color:#8fd4da;
+  color:#BF974C;
   border-color: solid 3px #f8f1c8;
   padding:10px;
   margin:5px;
   font-size:1.25em;
+  display:block;
 }
 .hashtags{
   float:left;
+  width:100%;
+}
+
+.inline{
+  display:inline-block;
+}
+
+.main-search{
+  font-size:1.25em;
 }
